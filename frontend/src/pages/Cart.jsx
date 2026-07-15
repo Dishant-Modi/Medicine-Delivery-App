@@ -8,7 +8,6 @@ import Footer from '../components/Footer'
 import { useSelector } from 'react-redux';
 import StripeCheckout from "react-stripe-checkout";
 import { userRequest } from '../RequestMethods';
-import cors from "cors";
 
 const KEY = "pk_test_51NvaZySCBtJ08adKz0kQshcPvz44QrjVKQO4BmTv0EcTHBUYFu4yfBpDbItpInJQYLrzriXO9AkW3YijcwgOANXH00Mo0oMPBI"
 

@@ -30,11 +30,8 @@
     "react-responsive-carousel": "^3.2.23",
     "react-router-dom": "^6.16.0",
     "react-scripts": "^5.0.1",
-<<<<<<< HEAD
     "react-stripe-checkout": "^2.6.3",
-=======
     "redux-persist": "^6.0.0",
->>>>>>> 9d4d52b2ddcd47ee7f16d2d2c8ebceeb5e46beab
     "stripe": "^13.8.0",
     "styled-components": "^6.0.7",
     "web-vitals": "^2.1.4"

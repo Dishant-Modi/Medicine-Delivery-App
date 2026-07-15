@@ -15,7 +15,7 @@ const http = require("http");
 dotenv.config();
 const app = express();
 
-mongoose.connect("mongodb+srv://balotiyanilesh27:Nilu%402707@cluster0.96gvera.mongodb.net/shop?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGO_URI)
 .then(console.log("Mongodb Connected"))
 .catch((err)=> console.log(err))
 
@@ -32,6 +32,7 @@ app.use('/api/orders' , orderRoute);
 app.use('/api/cart' , cartRoute);
 
 
-server.listen(5000,function(){
-    console.log("Server is listening on port 5000");
+const PORT = process.env.PORT || 5000;
+server.listen(PORT,function(){
+    console.log(`Server is listening on port ${PORT}`);
 });

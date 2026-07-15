@@ -9,11 +9,8 @@ import Cart from "./pages/Cart";
 import MultipleShops from "./pages/MultipleShops";
 import Products from "./pages/Products";
 import Singleproduct from "./pages/Singleproduct";
-<<<<<<< HEAD
-import  Success  from "./pages/SuccessPage";
-=======
+import Success from "./pages/SuccessPage";
 import { useSelector } from "react-redux";
->>>>>>> 9d4d52b2ddcd47ee7f16d2d2c8ebceeb5e46beab
 
 const App = () => {
   const user = useSelector(state => state.user.currentUser)

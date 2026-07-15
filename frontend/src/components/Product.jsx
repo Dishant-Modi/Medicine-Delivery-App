@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import CategoryItem from '../components/CategoryItem';
 // import { productsdata } from '../categoriesdata';
-import axios from 'axios';
+import { publicRequest } from '../RequestMethods';
 import ProductPageItem from './ProductPageItem';
 
 
@@ -20,7 +20,7 @@ const Product = (props) => {
     useEffect(()=>{
         const getProducts = async ()=> {
             try{
-                const res = await axios.get(props.cat ? `http://localhost:5000/api/products?categories=${props.cat}`:"http://localhost:5000/api/products");
+                const res = await publicRequest.get(props.cat ? `products?categories=${props.cat}` : "products");
                 setProducts(res.data);
             }
             catch(err){

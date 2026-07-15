@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Navbar from "../components/Navbar"
 import Loginlogo from '../images/Loginlogo.png';
 import { useState } from 'react';
-import axios from 'axios';
+import { publicRequest } from '../RequestMethods';
 import { Link } from 'react-router-dom';
 
 
@@ -112,7 +112,7 @@ const Register = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const response = await publicRequest.post('auth/register', formData);
       console.log('Registration successful:', response.data);
     } catch (error) {
       console.error('Registration failed:', error);

@@ -12,7 +12,7 @@ import { Badge } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useSelector,useDispatch} from "react-redux";
 import { logout } from "../redux/userRedux";
-import axios from "axios";
+import { publicRequest } from "../RequestMethods";
 import SearchDropDown from "../components/ShowDropDown"
 
 
@@ -122,8 +122,8 @@ const Navbar = () => {
   const handleSearch = async () => {
     // Handle the search logic here, making an API call to fetch products based on searchInput
     try {
-      const response = await axios.get(
-        `http://localhost:5000/api/products/search?title=${searchInput}`
+      const response = await publicRequest.get(
+        `products/search?title=${searchInput}`
       );
       setSearchResults(response.data);
       setShowDropdown(response.data.length > 0);

@@ -4,8 +4,7 @@ import { FavoriteBorder, ShoppingBagRounded, Star } from '@mui/icons-material';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useLocation } from 'react-router-dom';
-// import { publicRequest } from '../ResponseMethod';
-import axios from 'axios';
+import { publicRequest } from '../RequestMethods';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../redux/cartRedux';
@@ -186,7 +185,7 @@ const Singleproduct = (props) => {
     useEffect(()=>{
         const getProduct = async ()=>{
             try{
-                const res = await axios.get(`http://localhost:5000/api/products/find/`+id);
+                const res = await publicRequest.get(`products/find/`+id);
                 setProduct(res.data);
             }
             catch(err){
